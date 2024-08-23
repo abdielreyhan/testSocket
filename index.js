@@ -17,17 +17,17 @@ io.on('connection',(socket)=>{
         // socket.broadcast.emit('sendChatToClient',message);
     });
 
-    // socket.on('sendPenjualanOlehToServer',(message)=>{
-    //     console.log(message);
-    //     io.sockets.emit('sendPenjualanOlehToClient',message);
-    //     // socket.broadcast.emit('sendChatToClient',message);
-    // });
+    socket.on('sendPenjualanOlehToServer',(message)=>{
+        console.log(message);
+        io.sockets.emit('sendPenjualanOlehToClient',message);
+        // socket.broadcast.emit('sendChatToClient',message);
+    });
     
-    // socket.on('sendTestPrint',(message)=>{
-    //     console.log(message);
-    //     io.sockets.emit('sendTestPrintClient',message);
-    //     // socket.broadcast.emit('sendChatToClient',message);
-    // });
+    socket.on('sendTestPrint',(message)=>{
+        console.log(message);
+        io.sockets.emit('sendTestPrintClient',message);
+        // socket.broadcast.emit('sendChatToClient',message);
+    });
 
     socket.on('disconnect',(socket)=>{
         console.log('disconnect');
